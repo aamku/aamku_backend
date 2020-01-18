@@ -5,6 +5,7 @@ const app  = express()
 const port = process.env.PORT || 3000;
 
 app.use(require('./routes/addUser.js'));
+app.use(require('./routes/allUsers.js'));
 
 app.listen(port,() => {
 
