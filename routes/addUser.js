@@ -38,7 +38,7 @@ router.post('/saveUser',(req,res) => {
                                          console.log("Error",err);
                                      }
                                      else{
-                                         resp.send("User created");
+                                         res.send("User created");
                                      }
                                         
                                 });
