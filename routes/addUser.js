@@ -23,12 +23,7 @@ router.post('/saveUser',(req,res) => {
           };
 
 
-                if(err){
-                    console.log("Error",err);
-                }
-                else{
-
-                    MongoClient.connect(dburl,{useNewUrlParser:true,useNewUnifiedTechnology:true},(err,client) => {
+                MongoClient.connect(dburl,{useNewUrlParser:true,useNewUnifiedTechnology:true},(err,client) => {
 
                               if(err){
                                   console.log("Error",err);
@@ -49,7 +44,7 @@ router.post('/saveUser',(req,res) => {
                                 });
                           }
                     });
-                }
+                
 
 });
 
