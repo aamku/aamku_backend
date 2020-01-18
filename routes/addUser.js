@@ -23,7 +23,7 @@ router.post('/saveUser',(req,res) => {
           };
 
 
-                MongoClient.connect(dburl,{useNewUrlParser:true,useNewUnifiedTechnology:true},(err,client) => {
+                MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTechnology:true},(err,client) => {
 
                               if(err){
                                   console.log("Error",err);
