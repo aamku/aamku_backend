@@ -9,7 +9,7 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.post('/saveUser',(err,client) => {
+router.post('/saveUser',(req,res) => {
        
         const data = { 
 
@@ -21,6 +21,7 @@ router.post('/saveUser',(err,client) => {
               whatsapp:req.body.whatsapp,
               department:req.body.department
           };
+
 
                 if(err){
                     console.log("Error",err);
