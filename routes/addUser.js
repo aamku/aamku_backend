@@ -19,7 +19,10 @@ router.post('/saveUser',(req,res) => {
               email:req.body.email,
               mobile:req.body.mobile,
               whatsapp:req.body.whatsapp,
-              department:req.body.department
+              department:req.body.department,
+              target_timeline:req.body.target_timeline,
+              target:req.body.target,
+              product_sales:req.body.product_sales
           };
 
 
