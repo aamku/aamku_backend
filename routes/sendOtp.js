@@ -40,8 +40,8 @@ const nexmo = new Nexmo({
                         const coll = client.db("Aamku_connect").collection("AllUsers");
                         coll.insertOne({otp:otp}).then((resp) => {
                        
-                                console.log("Otp send successfully");
-                                
+                               res.send("Otp send successfully");
+
                         }).catch((error) => {
 
                              console.log("Error",error);
