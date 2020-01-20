@@ -17,7 +17,7 @@ const nexmo = new Nexmo({
 
    router.post('/sendOtp',(req,res) => {
 
-        const otp = Math.floor(1000 + Math.random() * 9000);
+        const otp = Math.floor(1000 + Math.random() * 9000).toString();
         const phone = req.body.phone;
         const from = 'Nexmo';
         const message = 'Your Otp for phone verification is: ' + otp;
@@ -38,7 +38,7 @@ const nexmo = new Nexmo({
                     else{
                      
                         const coll = client.db("Aamku_connect").collection("Otps");
-                        coll.insertOne({otp:otp.toString()}).then((resp) => {
+                        coll.insertOne({otp:otp}).then((resp) => {
                        
                                res.send("Otp send successfully");
 
