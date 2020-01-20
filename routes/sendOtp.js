@@ -38,7 +38,7 @@ const nexmo = new Nexmo({
                     else{
                      
                         const coll = client.db("Aamku_connect").collection("Otps");
-                        coll.insertOne({otp:otp,phone:phone}).then((resp) => {
+                        coll.insertOne({otp:otp}).then((resp) => {
                        
                                res.send("Otp send successfully");
 
@@ -49,7 +49,7 @@ const nexmo = new Nexmo({
                         
                     }
                    
-                 });
+                 });  
             }
                   
         });
