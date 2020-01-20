@@ -11,7 +11,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.get('/allUsers',(req,res) => {
 
-   MongoClient.connect("dburl",{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
+   MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
            /*     const data = {
                             role:req.body.role
