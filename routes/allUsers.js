@@ -13,9 +13,9 @@ router.get('/allUsers',(req,res) => {
 
    MongoClient.connect("dburl",{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
-                const data = {
+           /*     const data = {
                             role:req.body.role
-                        };
+                        };   */
               if(err){
                   console.log("Error",err);
               }
@@ -23,7 +23,7 @@ router.get('/allUsers',(req,res) => {
 
                   const coll = client.db("Aamku_connect").collection("AllUsers");
 
-                  coll.find({role:data.role}).toArray((err,result) => {
+                  coll.find({}).toArray((err,result) => {
                              
                            if(err){
                                console.log("Error",err);
