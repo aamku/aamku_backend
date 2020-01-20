@@ -23,7 +23,7 @@ router.post('/checkOtp',(req,res) => {
                     else{
 
                         const coll = client.db("Aamku_connect").collection("Otps");
-                        coll.findOne({otp:+data.otp},function(err,doc){
+                        coll.findOne({otp:data.otp},function(err,doc){
 
                                      if(err){
                                          console.log("Error",err);
