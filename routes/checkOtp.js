@@ -12,7 +12,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.post('/checkOtp',(req,res) => {
 
           const data = {
-              otp:Number(req.body.otp)  
+              otp:req.body.otp
           };
 
           MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
@@ -23,7 +23,7 @@ router.post('/checkOtp',(req,res) => {
                     else{
 
                         const coll = client.db("Aamku_connect").collection("Otps");
-                        coll.findOne({otp:data.otp},function(err,doc){
+                        coll.findOne({otp:+data.otp},function(err,doc){
 
                                      if(err){
                                          console.log("Error",err);
