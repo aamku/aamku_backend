@@ -12,7 +12,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.post('/checkOtp',(req,res) => {
 
           const data = {
-              otp:req.body.otp  
+              otp:Number(req.body.otp)  
           };
 
           MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
