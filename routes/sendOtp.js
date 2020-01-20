@@ -20,7 +20,7 @@ const nexmo = new Nexmo({
         const otp = Math.floor(1000 + Math.random() * 9000);
         const phone = req.body.phone;
         const from = 'Nexmo';
-        const message = 'Your Otp for phone verification is';
+        const message = 'Your Otp for phone verification is: ' + otp;
         
 
         nexmo.message.sendSms(from,phone,message,(err,responseData) => {
@@ -38,7 +38,7 @@ const nexmo = new Nexmo({
                     else{
                      
                         const coll = client.db("Aamku_connect").collection("Otps");
-                        coll.insertOne({otp:otp}).then((resp) => {
+                        coll.insertOne({otp:otp,msg:message}).then((resp) => {
                        
                                res.send("Otp send successfully");
 
