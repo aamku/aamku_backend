@@ -12,7 +12,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.post('/saveRetailer',(req,res) => {
 
     const data = {
-             added_by:req.body.added_by,
+             salesperson_id:req.body.added_by,
              name:req.body.name,
              email:req.body.email,
              mobile:req.body.mobile,
