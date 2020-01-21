@@ -15,10 +15,11 @@ router.post('/saveRetailer',(req,res) => {
              added_by:req.body.added_by,
              name:req.body.name,
              email:req.body.email,
-             mobile:req.body.email,
+             mobile:req.body.mobile,
              whatsapp:req.body.whatsapp,
              gst:req.body.gst,
-             services:req.body.services 
+             services:req.body.services,
+             status:req.body.status 
     };
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTechnology:true},(err,client) => {
