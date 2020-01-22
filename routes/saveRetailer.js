@@ -29,8 +29,7 @@ router.post('/saveRetailer',(req,res) => {
                               }
                               else{
 
-                                const coll = client.db("Aamku_connect").collection("PendingRetailers");
-
+                                const coll = client.db("Aamku_connect").collection("AllRetailers");
                                 coll.insertOne(data,(err,resp) => {
 
                                           if(err){
@@ -41,7 +40,7 @@ router.post('/saveRetailer',(req,res) => {
                                           }
                                 });
                               }
-    });
+    });sers
 
 });
 
