@@ -22,7 +22,7 @@ router.post('/saveRetailer',(req,res) => {
              status:req.body.status 
     };
 
-    MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTechnology:true},(err,client) => {
+    MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
                               if(err){
                                   console.log("Error",err);
