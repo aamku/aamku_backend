@@ -9,7 +9,7 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/getRetailers',(req,res) => {
+router.get('/getPendingRetailers',(req,res) => {
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
