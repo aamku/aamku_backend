@@ -3,11 +3,17 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const dotEnv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
-
+const admin = require('firebase-admin');
+const serviceAccount = require("./service_account.json");
 const dburl = process.env.URL;
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://aamku-connect.firebaseio.com"
+});
 
 router.post('/saveRetailer',(req,res) => {
 
@@ -20,6 +26,21 @@ router.post('/saveRetailer',(req,res) => {
              gst:req.body.gst,
              services:req.body.services,
              status:req.body.status 
+    };
+
+    var payload = {
+      notification: {
+        title: "User added",
+        body: "{nam} added in database."
+      },  
+      data: {
+        account: "Savings",
+        balance: "$3020.25"
+      } 
+    };
+
+   var options = {
+       priority: "high"
     };
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
@@ -40,7 +61,7 @@ router.post('/saveRetailer',(req,res) => {
                                           }
                                 });
                               }
-    });sers
+    });
 
 });
 
