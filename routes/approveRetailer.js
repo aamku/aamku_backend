@@ -25,7 +25,7 @@ router.post('/approveRetailer',(req,res) => {
                             var myquery = {mobile: data.phone};
                             var newvalues = { $set: {status:"approved"}};
 
-                            const coll = client.db('Aamku').collection('AllRetailers');
+                            const coll = client.db('Aamku_connect').collection('AllRetailers');
                             coll.updateOne(myquery,newvalues,function(err,resp){
 
                                 if(err){
