@@ -25,7 +25,8 @@ router.post('/saveRetailer',(req,res) => {
              whatsapp:req.body.whatsapp,
              gst:req.body.gst,
              services:req.body.services,
-             status:req.body.status 
+             status:req.body.status,
+             time:req.body.time 
     };
 
     var payload = {
