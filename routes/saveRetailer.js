@@ -31,7 +31,7 @@ router.post('/saveRetailer',(req,res) => {
 
     var payload = {
       notification: {
-        title: "User added",
+        title: "New retailer added",
         body: "{nam} added in database."
       },  
       data: {
@@ -43,6 +43,8 @@ router.post('/saveRetailer',(req,res) => {
    var options = {
        priority: "high"
     };
+
+    let registrationToken = "fFGEV02_Ajs:APA91bF23SwG3da7pIS9aKWcw4ffl7_VfRhMv1gdY3l-QATvaxP1SlvrzXrbUOpJ0732y9ZW7XrtAKj_wmeGXISaUDzj0rY2p_7HMFBzXC_-OMjGLkoHWVQHBqQLkibJlWBFbEtFvhSV";
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
@@ -59,6 +61,13 @@ router.post('/saveRetailer',(req,res) => {
                                           }
                                           else{
                                             res.send("Data added");
+
+                                            admin.messaging().sendToDevice(registrationToken,payload,options).then((response) => {
+
+                                              console.log("response",response)
+                                            }).catch((error) => {
+                                               console.log("error",error);
+                                            });
                                           }
                                 });
                               }
