@@ -10,6 +10,10 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.get('/getSalesRetailer',(req,res) => {
 
+    const data = {
+          id:req.body.id
+    };
+
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
                if(err){
@@ -19,7 +23,7 @@ router.get('/getSalesRetailer',(req,res) => {
 
                 var coll = client.db("Aamku_connect").collection("AllRetailers");
 
-                coll.find({}).toArray((err,result) => {
+                coll.find({salesperson_id:data.id}).toArray((err,result) => {
 
                     if(err){
                         console.log("Error",err);
