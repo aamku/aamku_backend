@@ -11,6 +11,7 @@ app.use(require('./routes/checkOtp.js'));
 app.use(require('./routes/saveRetailer.js'));
 app.use(require('./routes/getPendingRetailers.js'));
 app.use(require('./routes/approveRetailer.js'));
+app.use(require('./routes/getSalesRetailer.js'));
 
 app.listen(port,() => {
 
