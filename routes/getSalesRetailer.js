@@ -19,11 +19,22 @@ router.get('/getSalesRetailer',(req,res) => {
 
                 var coll = client.db("Aamku_connect").collection("AllRetailers");
 
-                let output = result.map(r => ({'name':r.name,'time':r.time}));
+                coll.find({}).toArray((err,result) => {
 
-                res.send(output);
-                client.close();
-               }
+                    if(err){
+                        console.log("Error",err);
+                    }
+                    else{
+                        
+                        let output = result.map(r => ({'name':r.name,'time':r.time}));
+
+                        res.send(output);
+                        client.close();
+                    }
+
+                });
+
+           }
     });
 });
 
