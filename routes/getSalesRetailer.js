@@ -8,7 +8,7 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/getSalesRetailer',(req,res) => {
+router.post('/getSalesRetailer',(req,res) => {
 
     const data = {
           id:req.body.id
