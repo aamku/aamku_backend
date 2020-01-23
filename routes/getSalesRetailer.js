@@ -30,7 +30,7 @@ router.post('/getSalesRetailer',(req,res) => {
                     }
                     else{
                         
-                        let output = result.map(r => ({'name':r.name,'time':r.time}));
+                        let output = result.map(r => ({'name':r.name,'time':r.time,'status':r.status}));
 
                         res.send(output);
                         client.close();
