@@ -24,6 +24,10 @@ router.post('/saveRetailer',(req,res) => {
              mobile:req.body.mobile,
              whatsapp:req.body.whatsapp,
              gst:req.body.gst,
+             state:req.body.state,
+             city:req.body.city,
+             address:req.body.address,
+             pin:req.body.pin,
              services:req.body.services,
              status:req.body.status,
              time:req.body.time 
