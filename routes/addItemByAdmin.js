@@ -10,17 +10,19 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.post('/adminItemAdd',(req,res) => {
+router.post('/adminItemAddByAdmin',(req,res) => {
 
     const data = {
         product_sku:req.body.product_sku,
         product_name:req.body.product_name,
-        gst_hsn_code:req.body.gst_hsn_code,
-        product_quantity:req.body.product_quantity,
-        size:req.body.size,
-        brand:req.body.brand,
+        quantity:req.body.quantity,
+        order_type:req.body.order_type,
+        pages:req.body.pages,
         mrp:req.body.mrp,
-        selling_price:req.body.selling_price
+        single_line_quantity:req.body.single_line_quantity,
+        four_line_quantity:req.body.four_line_quantity,
+        square_line_quantity:req.body.square_line_quantity,
+        oneside_line_quantity:req.body.oneside_line_quantity
         
        };
 
