@@ -22,7 +22,8 @@ router.post('/adminItemAddByAdmin',(req,res) => {
         single_line_quantity:req.body.single_line_quantity,
         four_line_quantity:req.body.four_line_quantity,
         square_line_quantity:req.body.square_line_quantity,
-        oneside_line_quantity:req.body.oneside_line_quantity
+        oneside_line_quantity:req.body.oneside_line_quantity,
+        date:req.body.date
         
        };
 
