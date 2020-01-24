@@ -45,4 +45,6 @@ router.post('/adminItemAdd',(req,res) => {
                            }
        });
 
+    });
+
        module.exports = router;
