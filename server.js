@@ -14,6 +14,7 @@ app.use(require('./routes/approveRetailer.js'));
 app.use(require('./routes/getSalesRetailer.js'));
 app.use(require('./routes/adminItemsAdd.js'));
 app.use(require('./routes/adminSeeRetailers.js'));
+app.use(require('./routes/cancelRetailer.js'));
 
 app.listen(port,() => {
 
