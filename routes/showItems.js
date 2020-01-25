@@ -21,23 +21,26 @@ router.get('/showItems',(req,res) => {
 
                             
                       const coll = client.db("Aamku_connect").collection("ItemsAddedByAdmin");
-                      coll.insertOne(data,(err,response) => {
+                      coll.find({}).toArray((err,result) => {
 
-                                        
-                                       if(err){
-                                           console.log("Error",err);
-                                       }
-                                       else{
-                                        
+                                    if(err){
+                                        console.log("Error",err);
+                                    }
+                                    else{
+
                                         let output = result.map(r => ({'name':r.product_name,'sku':r.product_sku,'pages':r.pages,'mrp':r.mrp,
                                                                    'inner':r.inner_pack,'outer':r.outer_pack}));
  
                                         res.send(output);
                                         client.close();
-                                       }
-                            });
+                                    }
+
+                        });
+                    
                      }
-    });
+         });
 });
 
 module.exports = router;
+
+
