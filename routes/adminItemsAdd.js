@@ -22,7 +22,8 @@ router.post('/adminItemAdd',(req,res) => {
         mrp:req.body.mrp,
         selling_price:req.body.selling_price,
         order_type:req.body.rule_type,
-        rule_type:req.body.rule_type
+        rule_type:req.body.rule_type,
+        date:req.body.date
         
        };
 
