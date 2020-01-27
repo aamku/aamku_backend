@@ -30,7 +30,7 @@ router.post('/saveRetailer',(req,res) => {
              pin:req.body.pin,
              services:req.body.services,
              status:req.body.status,
-             time:req.body.time 
+             date:req.body.date 
     };
 
     var payload = {
