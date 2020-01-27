@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const Nexmo = require('nexmo');
 const dotEnv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 const admin = require('firebase-admin');
@@ -10,15 +11,21 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
+const nexmo = new Nexmo({
+    apiKey: process.env.APIKEY,
+    apiSecret: process.env.APISECRET
+  });
+
 router.post('/retailerLoginOtp',(req,res) => {
 
+   // const phon = "91"+req.body.phone; 
     const data = {
           
         phone:req.body.phone
     };
 
     const otp = Math.floor(1000 + Math.random() * 9000).toString();
-    const phone = req.body.phone;
+    const myphone = "91"+req.body.phone;
     const from = 'Nexmo';
     const message = 'Your Otp for phone verification is: ' + otp;
 
@@ -40,7 +47,7 @@ router.post('/retailerLoginOtp',(req,res) => {
 
                                  //Nexmo
 
-                                 nexmo.message.sendSms(from,phone,message,(err,responseData) => {
+                                 nexmo.message.sendSms(from,myphone,message,(err,responseData) => {
 
                                     if(err){
                                         console.log("My Error",err);
@@ -79,7 +86,7 @@ router.post('/retailerLoginOtp',(req,res) => {
                                 else{
                                    res.send("Register before login");
                                 }
-                             });
+                             });   
              }
     });
  
