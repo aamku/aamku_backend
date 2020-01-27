@@ -19,6 +19,7 @@ app.use(require('./routes/addItemByAdmin.js'));
 app.use(require('./routes/showItems.js'));
 app.use(require('./routes/retailerLoginOtp.js'));
 app.use(require('./routes/sendExcelToSales.js'));
+app.use(require('./routes/retManageShow.js'));
 
 app.listen(port,() => {
 
