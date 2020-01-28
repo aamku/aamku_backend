@@ -19,6 +19,7 @@ router.post('/saveRetailer',(req,res) => {
 
     const data = {
              salesperson_id:req.body.added_by,
+             retailer_id:req.body.retailer_id,
              name:req.body.name,
              email:req.body.email,
              mobile:req.body.mobile,
