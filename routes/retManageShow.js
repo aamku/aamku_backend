@@ -9,17 +9,22 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/retManageShow',(req,res) => {
+router.post('/retManageShow',(req,res) => {
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
+
+        const data = {
+
+               phone:req.body.id
+        };
                    if(err){
                        console.log("Error",err);
                    }
                    else{
                   
                         const coll = client.db("Aamku_connect").collection("AllRetailers");
-                        coll.find({status:"approved"}).toArray((err,result) => {
+                        coll.find({$and:[{salesperson_id:data.phone},{status:"approved"}]}).toArray((err,result) => {
                                    
                             if(err){
                                 console.log("Error",err);
