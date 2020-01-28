@@ -21,6 +21,7 @@ app.use(require('./routes/retailerLoginOtp.js'));
 app.use(require('./routes/sendExcelToSales.js'));
 app.use(require('./routes/retManageShow.js'));
 app.use(require('./routes/allDealers.js'));
+app.use(require('./routes/dealerCount.js'));
 
 app.listen(port,() => {
 
