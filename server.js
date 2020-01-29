@@ -23,6 +23,7 @@ app.use(require('./routes/retManageShow.js'));
 app.use(require('./routes/allDealers.js'));
 app.use(require('./routes/dealerCount.js'));
 app.use(require('./routes/retailerIdSpinner.js'));
+app.use(require('./routes/getGenOrderRetInfo.js'));
 
 app.listen(port,() => {
 
