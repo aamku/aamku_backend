@@ -9,9 +9,13 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/retailerIdSpin',(req,res) => {
+router.post('/retailerIdSpin',(req,res) => {
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
+
+              const data = {
+                     id:req.body.id
+              };
 
                    if(err){
                        console.log("Error",err);
@@ -19,7 +23,7 @@ router.get('/retailerIdSpin',(req,res) => {
                    else{
                   
                         const coll = client.db("Aamku_connect").collection("AllRetailers");
-                        coll.find({}).toArray((err,result) => {
+                        coll.find({salesperson_id:data.id}).toArray((err,result) => {
                                    
                             if(err){
                                 console.log("Error",err);
