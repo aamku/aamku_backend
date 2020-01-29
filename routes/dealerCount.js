@@ -26,7 +26,8 @@ router.get('/dealerCount',(req,res) => {
                                           }
                                           else{
                                              
-                                             res.send({"total": resp});
+                                           
+                                              res.send({"total": resp});
                                           }
                                 });
                            }
