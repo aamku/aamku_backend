@@ -77,7 +77,7 @@ const nexmo = new Nexmo({
 
                                  }
                                  else{
-                                     res.send("SalesPeerson not registered");
+                                     res.send("SalesPerson not registered");
                                  }
                     });
                 }
