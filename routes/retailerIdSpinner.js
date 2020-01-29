@@ -23,7 +23,7 @@ router.post('/retailerIdSpin',(req,res) => {
                    else{
                   
                         const coll = client.db("Aamku_connect").collection("AllRetailers");
-                        coll.find({salesperson_id:data.id}).toArray((err,result) => {
+                        coll.find({$and:[{status:"approved"},{salesperson_id:data.id}]}).toArray((err,result) => {
                                    
                             if(err){
                                 console.log("Error",err);
