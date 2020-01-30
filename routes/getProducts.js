@@ -33,7 +33,7 @@ router.post('/getProducts',(req,res) => {
                                  else{
 
                                  	let output = result.map(r => ({'name':r.product_name,'sku':r.product_sku,
-                                                   'page':r.pages,'mrp':r.mrp}));
+                                                   'page':r.pages,'mrp':r.mrp,'size':r.size}));
 
                                  	res.send(output);
                                  	client.close();
