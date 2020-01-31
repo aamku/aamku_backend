@@ -29,7 +29,7 @@ router.get('/showItems',(req,res) => {
                                     else{
 
                                         let output = result.map(r => ({'name':r.product_name,'sku':r.product_sku,'pages':r.pages,'mrp':r.mrp,
-                                                                   'inner':r.inner_pack,'outer':r.outer_pack}));
+                                                                      'size':r.size,'inner':r.inner_pack,'outer':r.outer_pack}));
  
                                         res.send(output);
                                         client.close();
