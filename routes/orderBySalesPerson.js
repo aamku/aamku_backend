@@ -41,7 +41,18 @@ router.post('/orderbySalesPerson',(req,res) => {
                     console.log("Error",err);
                 }
                 else{
-                    res.send("order generated");
+                  //  res.send("order generated");
+
+                    const coll = client.db('Aamku_connect').collection('TemporaryOrder');     
+                    coll.insertOne(data,(err,resp) => {
+                       
+                        if(err){
+                            console.log("Error",err);
+                        }
+                        else{
+                            res.send("order generated");
+                        }
+                    });               
                 }
             });
             
