@@ -28,14 +28,14 @@ router.post('/orderbySalesPerson',(req,res) => {
         else{
 
             const coll = client.db('Aamku_connect').collection('Orders');
-            coll.insertOne(data,function(err,resp){
+            coll.insertOne(data,(err,resp) => {
 
-                   if(err){
-                       console.log("Error",err);
-                   }
-                   else{
-                       res.send("Order generated");
-                   }
+                if(err){
+                    console.log("Error",err);
+                }
+                else{
+                    res.send("order generated");
+                }
             });
             
         }
