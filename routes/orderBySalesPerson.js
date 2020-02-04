@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router; 
+const router = express.Router(); 
 const bodyParser = require('body-parser');
 const dotEnv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
