@@ -26,6 +26,7 @@ app.use(require('./routes/retailerIdSpinner.js'));
 app.use(require('./routes/getGenOrderRetInfo.js'));
 app.use(require('./routes/getProductNameInSpinner.js'));
 app.use(require('./routes/getProducts.js'));
+app.use(require('./routes/orderBySalesPerson.js'));
 
 app.listen(port,() => {
 
