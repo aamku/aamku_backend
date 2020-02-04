@@ -16,6 +16,8 @@ router.post('/orderbySalesPerson',(req,res) => {
         const data = {
             
             retailer_id:req.body.retailer_id,
+            salesperson_id:req.body.salesperson_id,
+            order_date:req.body.order_date,
             quantity:req.body.quantity,
             order_type:req.body.order_type,
             product_name:req.body.product_name,
