@@ -18,7 +18,11 @@ router.post('/orderbySalesPerson',(req,res) => {
             quantity:req.body.quantity,
             order_type:req.body.order_type,
             product_name:req.body.product_name,
-            price:req.body.price
+            price:req.body.price,
+            single_rule_quantity:req.body.single_rule_quantity,
+            fourline_quantity:req.body.fourline_quantity,
+            square_line_quantity:req.body.square_line_quantity,
+            oneside_inter_leaf:req.body.oneside_inter_leaf
             
         };
                
