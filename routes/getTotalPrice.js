@@ -25,7 +25,7 @@ router.post('/getTotalPrice',(req,res) => {
                               else{
 
                                 const coll = client.db('Aamku_connect').collection('TemporaryOrder');
-                                coll.find({retailer_id:retailer_id}).toArray((err,result) => {
+                                coll.find({retailer_id:data.retailer_id}).toArray((err,result) => {
 
                                         if(err){
                                             console.log("Error",err);
