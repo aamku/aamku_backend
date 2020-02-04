@@ -22,7 +22,7 @@ router.post('/deleteOrder',(req,res) => {
              }
              else{
 
-                let coll = client.db('Aamku').collection('TemporaryOrder');
+                let coll = client.db('Aamku_connect').collection('TemporaryOrder');
 
                 coll.deleteMany({retailer_id:data.id}, function(err,obj){
                        
