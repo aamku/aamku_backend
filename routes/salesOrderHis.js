@@ -26,7 +26,8 @@ router.get('/salesOrderHis',(req,res) => {
                              }
                              else{
 
-                                const output = result.map(r => ({}));
+                                const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
+                                            'cost':r.price,'date':r.order_date}));
                                 res.send(output);
                              }
                         });
