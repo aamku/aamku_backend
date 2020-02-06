@@ -30,7 +30,8 @@ router.post('/getRetailerDataOrder',(req,res) => {
                          }
                          else{
 
-                            const output = result.map(r => ({'name':r.name,'phone':r.mobile,'address':r.address}));
+                            const output = result.map(r => ({'name':r.name,'phone':r.mobile,'address':r.address,
+                                           'ret_id':r.retailer_id}));
                             res.send(output);
                          }
             });
