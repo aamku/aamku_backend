@@ -31,6 +31,7 @@ app.use(require('./routes/getTotalPrice.js'));
 app.use(require('./routes/deleteOrder.js'));
 app.use(require('./routes/salesOrderHis.js'));
 app.use(require('./routes/retailerOrderHis.js'));
+app.use(require('./routes/getRetailerDataOrder.js'));
 
 app.listen(port,() => {
 
