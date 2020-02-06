@@ -23,17 +23,30 @@ router.post('/retailerOrderHis',(req,res) => {
                     else{
 
                         const coll = client.db('Aamku_connect').collection('Orders');
-                        coll.find({phone:data.phone}).toArray((err,result) => {
+                        coll.findOne({phone:data.phone},function(err,doc){
 
-                             if(err){
-                                 console.log("Error",err);
-                             }
-                             else{
+                            if(err){
+                                console.group("Error",err);
+                            }
+                            if(doc){
 
-                                const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
+                                const coll = client.db('Aamku_connect').collection('Orders');
+                                coll.find({phone:data.phone}).toArray((err,result) => {
+                                         
+                                    if(err){
+                                        console.group("Error",err);
+                                    }
+                                    else{
+                                        const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
                                             'cost':r.price,'date':r.order_date}));
-                                res.send(output);
-                             }
+                                        res.send(output);   
+                                    }
+                                         
+                                });
+                            }
+                            else{
+                                res.send("NO order found");
+                            }
                         });
                     }
     
@@ -42,3 +55,13 @@ router.post('/retailerOrderHis',(req,res) => {
 });
 
 module.exports = router;
+
+  /*   if(err){
+                                 console.log("Error",err);
+                             }
+                             else{
+
+                                const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
+                                            'cost':r.price,'date':r.order_date}));
+                                res.send(output);
+                             }   */
