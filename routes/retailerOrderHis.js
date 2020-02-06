@@ -9,13 +9,13 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/salesOrderHis',(req,res) => {
+router.post('/retailerOrderHis',(req,res) => {
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
-        const data = {
+               const data = {
                          phone:req.body.phone
-                    };
+                     };
                     
                     if(err){
                         console.log('Error',err);
