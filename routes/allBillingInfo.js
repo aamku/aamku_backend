@@ -34,7 +34,7 @@ router.post('/allBillingInfo',(req,res) => {
 
                                 let output = result.map(r => ({'pname':r.product_name,'type':r.order_type,'qty':r.quantity,
                                 'sline':r.single_rule_quantity,'sqline':r.square_line_quantity,'fline':r.fourline_quantity,
-                                        'oneside':r.oneside_inter_leaf}));
+                                        'oneside':r.oneside_inter_leaf,'price':r.price}));
  
                                 res.send(output);
                                 client.close();
