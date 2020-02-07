@@ -33,6 +33,7 @@ app.use(require('./routes/salesOrderHis.js'));
 app.use(require('./routes/retailerOrderHis.js'));
 app.use(require('./routes/getRetailerDataOrder.js'));
 app.use(require('./routes/generateBill.js'));
+app.use(require('./routes/getBillingRetInfo.js'));
 
 app.listen(port,() => {
 
