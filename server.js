@@ -32,6 +32,7 @@ app.use(require('./routes/deleteOrder.js'));
 app.use(require('./routes/salesOrderHis.js'));
 app.use(require('./routes/retailerOrderHis.js'));
 app.use(require('./routes/getRetailerDataOrder.js'));
+app.use(require('./routes/generateBill.js'));
 
 app.listen(port,() => {
 
