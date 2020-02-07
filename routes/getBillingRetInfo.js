@@ -12,7 +12,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.post('/getBillingRetInfo',(req,res) => {
 
        const data = {
-            id:req.body.retailerId
+            id:req.body.ret_Id
        };
 
        MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
