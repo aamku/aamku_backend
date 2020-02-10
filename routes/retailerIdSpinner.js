@@ -30,7 +30,7 @@ router.post('/retailerIdSpin',(req,res) => {
                             }
                             else{
 
-                                let output = result.map(r => ({'retailer_id':r.retailer_id}));
+                                let output = result.map(r => ({'retailer_id':r.retailer_id,'name':r.name}));
  
                                 res.send(output);
                                 client.close();
