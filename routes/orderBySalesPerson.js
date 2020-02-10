@@ -19,6 +19,7 @@ router.post('/orderbySalesPerson',(req,res) => {
             salesperson_id:req.body.salesperson_id,
             name:req.body.name,
             phone:req.body.phone,
+            order_status:req.body.order_status,
             address:req.body.address,
             order_date:req.body.order_date,
             quantity:req.body.quantity,
