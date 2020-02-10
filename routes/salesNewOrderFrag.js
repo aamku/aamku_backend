@@ -24,7 +24,7 @@ router.post('/salesNewOrderFrag',(req,res) => {
              else{
 
                  const coll = client.db('Aamku_connect').collection('Orders');
-                 coll.findOne({phone:data.phone},function(err,doc){
+                 coll.findOne({$and:[{salesperson_id:data.phone},{order_status:data.status}]},function(err,doc){
 
                      if(err){
                          console.group("Error",err);
