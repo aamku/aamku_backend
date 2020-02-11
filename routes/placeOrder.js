@@ -3,11 +3,18 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const dotEnv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
+const Nexmo = require('nexmo');
 
 const dburl = process.env.URL; 
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
+
+const nexmo = new Nexmo({
+    apiKey: process.env.APIKEY,
+    apiSecret: process.env.APISECRET
+  });
+  
 
 router.post('/placeOrder',(req,res) => {
 
@@ -17,9 +24,13 @@ router.post('/placeOrder',(req,res) => {
           
                id:req.body.ret_Id,
                date:req.body.date,
-               order_status:req.body.order_status
+               order_status:req.body.order_status,
+               mobile:req.body.mobil
            };
 
+           const phone = "91"+data.mobile;
+           const from = 'Nexmo';
+           const message = 'Thanks your order has been placed successfully';
       
            if(err){
                    console.log("Error",err);
@@ -44,6 +55,18 @@ router.post('/placeOrder',(req,res) => {
                         }else{
 
                              res.send("Updated successfully");
+                       
+                             nexmo.message.sendSms(from,phone,message,(err,responseData) => {
+                                 
+                                   if(err){
+                                       console.log("Error",err);
+                                   }
+                                   else{
+                                       console.log("Message send successfully");
+                                   }
+
+                             });
+                             
                              client.close();
                         }
 
