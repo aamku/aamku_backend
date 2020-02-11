@@ -62,7 +62,7 @@ router.post('/placeOrder',(req,res) => {
                                        console.log("Error",err);
                                    }
                                    else{
-                                       console.log("Message send successfully");
+                                       console.log(responseData);
                                    }
 
                              });
