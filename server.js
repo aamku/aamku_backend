@@ -37,6 +37,7 @@ app.use(require('./routes/getBillingRetInfo.js'));
 app.use(require('./routes/allBillingInfo.js'));
 app.use(require('./routes/salesNewOrderFrag.js'));
 app.use(require('./routes/placeOrder.js'));
+app.use(require('./routes/getPendingOrderForRetailer.js'));
 
 app.listen(port,() => {
 
