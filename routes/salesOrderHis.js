@@ -25,13 +25,12 @@ router.post('/salesOrderHis',(req,res) => {
                     else{
 
                         const coll = client.db('Aamku_connect').collection('Orders');
-                        coll.find({$or:[{salesperson_id:data.id},{order_status:data.status},{order_status:data.stats}]}).toArray((err,result) => {
-
-                             if(err){
-                                 console.log("Error",err);
-                             }
-                             else{
-
+                        coll.find({$and:[{salesperson_id:data.id},{$or:[{order_status:data.status},{order_status:data.stats}]}]}).toArray((err,result) => {
+                                  
+                            if(err){
+                                console.group("Error",err);
+                            }
+                            else{
                                 const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
                                             'cost':r.price,'date':r.order_date,'prodname':r.product_name,
                                             'order_type':r.order_type,'quantity':r.quantity,'single_line':r.single_rule_quantity,
