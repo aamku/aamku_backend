@@ -28,7 +28,7 @@ router.post('/placeOrder',(req,res) => {
                mobile:req.body.mobil
            };
 
-           const phone = "91"+req.body.mobil;
+           const phone = "91"+9910568702;
            const from = 'Nexmo';
            const message = 'Thanks your order has been placed successfully';
       
