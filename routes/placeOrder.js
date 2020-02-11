@@ -35,7 +35,7 @@ router.post('/placeOrder',(req,res) => {
                       if(doc){
 
                        const coll = client.db('Aamku_connect').collection('Orders');
-                       coll.updateOne({$and:[{retailer_id:data.id},{order_date:data.date}]},{$set:{order_status:data.order_status}},(err,result) => {
+                       coll.updateMany({$and:[{retailer_id:data.id},{order_date:data.date}]},{$set:{order_status:data.order_status}},(err,result) => {
 
                         if(err){
 
