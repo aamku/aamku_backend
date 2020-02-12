@@ -29,7 +29,6 @@ router.post('/saveRetailer',(req,res) => {
              city:req.body.city,
              address:req.body.address,
              pin:req.body.pin,
-             services:req.body.services,
              status:req.body.status,
              date:req.body.date 
     };
