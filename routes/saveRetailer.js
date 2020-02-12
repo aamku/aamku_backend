@@ -22,6 +22,7 @@ router.post('/saveRetailer',(req,res) => {
              retailer_id:req.body.retailer_id,
              name:req.body.name,
              email:req.body.email,
+             store_name:req.body.store_name,
              mobile:req.body.mobile,
              whatsapp:req.body.whatsapp,
              gst:req.body.gst,
