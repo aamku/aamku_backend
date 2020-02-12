@@ -16,7 +16,8 @@ router.post('/generateBill',(req,res) => {
              const data = {
                
                  ret_id:req.body.ret_id,
-                 date:req.body.date
+                 date:req.body.date,
+                 order_status:req.body.order_status
              };
 
              if(err){
@@ -25,7 +26,7 @@ router.post('/generateBill',(req,res) => {
              else{
                 
                 let coll = client.db('Aamku_connect').collection('Orders');
-                coll.find({$and:[{retailer_id:data.ret_id},{order_date:data.date}]}).toArray((err,result) => {
+                coll.find({$and:[{retailer_id:data.ret_id},{order_date:data.date},{order_status:req.body.order_status}]}).toArray((err,result) => {
 
                               if(err){
 

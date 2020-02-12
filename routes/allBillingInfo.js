@@ -13,7 +13,8 @@ router.post('/allBillingInfo',(req,res) => {
 
        const data = {
             id:req.body.ret_Id,
-            date:req.body.date
+            date:req.body.date,
+            order_status:req.body.order_status
        };
 
        MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
@@ -25,7 +26,7 @@ router.post('/allBillingInfo',(req,res) => {
                   else{
 
                     const coll = client.db("Aamku_connect").collection("Orders");
-                    coll.find({$and:[{retailer_id:data.id},{order_date:data.date}]}).toArray((err,result) => {
+                    coll.find({$and:[{retailer_id:data.id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
                              
                              if(err){
                                  console.log("Error",err);
