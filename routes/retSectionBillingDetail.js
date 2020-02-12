@@ -26,7 +26,7 @@ router.post('/retSectionBillingDetail',(req,res) => {
                   else{
 
                     const coll = client.db("Aamku_connect").collection("Orders");
-                    coll.find({$and:[{mobile:data.id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
+                    coll.find({$and:[{phone:data.id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
                              
                              if(err){
                                  console.log("Error",err);
