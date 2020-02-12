@@ -41,6 +41,7 @@ app.use(require('./routes/getPendingOrderForRetailer.js'));
 app.use(require('./routes/retSectionBillingInfo.js'));
 app.use(require('./routes/retSectionBillingDetail.js'));
 app.use(require('./routes/retGenerateBill.js'));
+app.use(require('./routes/retPlaceOrder.js'));
 
 app.listen(port,() => {
 
