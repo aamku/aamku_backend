@@ -34,7 +34,7 @@ router.post('/retGenerateBill',(req,res) => {
                               }
                               else{
 
-                                const output = result.map(r => ({'price':r.price}));
+                                const output = result.map(r => ({'price':r.price,'name':r.name}));
                                    
                                 res.send(output);
                               }
