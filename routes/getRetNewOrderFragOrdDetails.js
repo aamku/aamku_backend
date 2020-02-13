@@ -38,11 +38,10 @@ router.post('/getRetNewOrderFragOrdDetails',(req,res) => {
                                  console.group("Error",err);
                              }
                              else{
-                                 const output = result.map(r => ({'order_id':r._id,'name':r.name,'phone':r.phone,'address':r.address,
-                                                  'cost':r.price,'date':r.order_date,'prodname':r.product_name,
+                                 const output = result.map(r => ({'cost':r.price,'prodname':r.product_name,
                                                   'order_type':r.order_type,'quantity':r.quantity,'single_line':r.single_rule_quantity,
                                                    'square_line':r.square_line_quantity,'four_line':r.fourline_quantity,
-                                                   'interleaf':r.oneside_inter_leaf,'status':r.order_status}));
+                                                   'interleaf':r.oneside_inter_leaf}));
                                  res.send(output);   
                              }
                                   
