@@ -53,6 +53,8 @@ router.post('/retailerLoginOtp',(req,res) => {
                                         console.log("My Error",err);
                                     }
                                     else{
+
+                                        console.log(responseData);
                         
                                         MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
                         
