@@ -26,7 +26,7 @@ router.post('/retGenerateBill',(req,res) => {
              else{
                 
                 let coll = client.db('Aamku_connect').collection('Orders');
-                coll.find({$and:[{phone:data.ret_id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
+                coll.find({$and:[{retailer_id:data.ret_id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
 
                               if(err){
 
