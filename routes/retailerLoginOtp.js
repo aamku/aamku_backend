@@ -37,7 +37,7 @@ router.post('/retailerLoginOtp',(req,res) => {
                           else{
 
                             const coll = client.db("Aamku_connect").collection("AllRetailers");
-                            coll.findOne({mobile:data.phone},function(err,doc){
+                            coll.findOne({$and:[{mobile:data.phone},{status:"approved"}]},function(err,doc){
 
                                 if(err){
                                     console.log("Error",err);
@@ -54,7 +54,7 @@ router.post('/retailerLoginOtp',(req,res) => {
                                     }
                                     else{
 
-                                        console.log(responseData);
+                                       // console.log(responseData);
                         
                                         MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
                         
@@ -86,7 +86,7 @@ router.post('/retailerLoginOtp',(req,res) => {
 
                                 }  
                                 else{
-                                   res.send("Register before login");
+                                   res.send("You are not approved.");
                                 }
                              });   
              }
