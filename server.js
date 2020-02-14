@@ -43,7 +43,7 @@ app.use(require('./routes/retSectionBillingDetail.js'));
 app.use(require('./routes/retGenerateBill.js'));
 app.use(require('./routes/retPlaceOrder.js'));
 app.use(require('./routes/getRetNewOrderFragDetails.js'));
-app.use(require('./routes/getRetNewOrderFragOrdDetails.js'));
+app.use(require('./routes/adminSeeNewOrders.js'));
 
 app.listen(port,() => {
 
