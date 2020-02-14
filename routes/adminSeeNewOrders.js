@@ -24,7 +24,7 @@ router.post('/adminSeeNewOrders',(req,res) => {
              else{
                 
                 const coll = client.db('Aamku_connect').collection('Orders');
-                coll.find({salesperson_id:data.status}).toArray((err,result) => {
+                coll.find({order_status:data.status}).toArray((err,result) => {
                          
                     if(err){
                         console.group("Error",err);
