@@ -28,7 +28,7 @@ router.post('/adminCancelOrder',(req,res) => {
 
              const phone = "91"+data.ret_id;
              const from = 'Nexmo';
-             const message = 'Thanks, your order status has been confirmed.';
+             const message = 'Thanks, your order has been confirm.';
          
 
              if(err){
