@@ -26,7 +26,7 @@ router.post('/salesOrderHis',(req,res) => {
                     else{
 
                         const coll = client.db('Aamku_connect').collection('Orders');
-                        coll.find({$and:[{salesperson_id:data.id},{$or:[{order_status:data.status},{order_status:data.stats}]}]}).toArray((err,result) => {
+                        coll.find({$and:[{salesperson_id:data.id},{$or:[{order_status:data.status},{order_status:data.stats},{order_status:data.stat}]}]}).toArray((err,result) => {
                                   
                             if(err){
                                 console.group("Error",err);
