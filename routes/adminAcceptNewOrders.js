@@ -55,7 +55,7 @@ const nexmo = new Nexmo({
                                                  }else{
                          
                                                       res.send("Updated successfully");
-                                                
+                                                      console.log("Updated");
                                                       nexmo.message.sendSms(from,phone,message,(err,responseData) => {
                                                           
                                                             if(err){
