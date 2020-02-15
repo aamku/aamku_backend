@@ -16,7 +16,8 @@ router.post('/salesOrderHis',(req,res) => {
                 const data = {
                       id:req.body.id,
                       status:req.body.status,
-                      stats:req.body.stats
+                      stats:req.body.stats,
+                      stat:req.body.stat
                   };
                  
                  if(err){
