@@ -45,6 +45,7 @@ app.use(require('./routes/retPlaceOrder.js'));
 app.use(require('./routes/getRetNewOrderFragDetails.js'));
 app.use(require('./routes/adminSeeNewOrders.js'));
 app.use(require('./routes/adminAcceptNewOrders.js'));
+app.use(require('./routes/adminSectionBillingDetail.js'));
 
 app.listen(port,() => {
 

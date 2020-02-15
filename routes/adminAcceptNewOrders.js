@@ -22,6 +22,7 @@ const nexmo = new Nexmo({
         product:req.body.product,
         mobile:req.body.phone,
         date:req.body.date,
+        status:req.body.status
     };
 
     const phone = "91"+data.mobile;
@@ -36,7 +37,7 @@ const nexmo = new Nexmo({
                             else{
                                
                                 const coll = client.db("Aamku_connect").collection("Orders");
-                                coll.find({$and:[{product_name:data.product},{order_date:data.date},{order_status:"pending"},
+                                coll.find({$and:[{product_name:data.product},{order_date:data.date},{order_status:data.status},
                                            {phone:data.mobile}]},function(err,doc){
 
                                                 if(err){
