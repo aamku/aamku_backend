@@ -47,6 +47,7 @@ app.use(require('./routes/adminSeeNewOrders.js'));
 app.use(require('./routes/adminAcceptNewOrders.js'));
 app.use(require('./routes/adminSectionBillingDetail.js'));
 app.use(require('./routes/adminAcceptAll.js'));
+app.use(require('./routes/adminCancelOrder.js'));
 
 app.listen(port,() => {
 
