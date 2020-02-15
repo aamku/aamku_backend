@@ -22,7 +22,6 @@ const nexmo = new Nexmo({
         product:req.body.product,
         mobile:req.body.phone,
         date:req.body.date,
-        cost:req.body.cost
     };
 
     const phone = "91"+data.mobile;
