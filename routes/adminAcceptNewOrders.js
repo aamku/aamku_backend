@@ -45,7 +45,7 @@ const nexmo = new Nexmo({
                                                if(doc){
 
                                                 const coll = client.db('Aamku_connect').collection('Orders');
-                                                coll.updateOne({$and:[{phone:data.mobile},{order_date:data.date},
+                                                coll.updateMany({$and:[{phone:data.mobile},{order_date:data.date},
                                                 {product_name:data.product}]},{$set:{order_status:"approve"}},(err,result) => {
                          
                                                  if(err){
