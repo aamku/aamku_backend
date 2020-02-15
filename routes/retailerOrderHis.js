@@ -31,7 +31,7 @@ router.post('/retailerOrderHis',(req,res) => {
                             if(doc){
 
                                 const coll = client.db('Aamku_connect').collection('Orders');
-                                coll.find({phone:data.phone}).toArray((err,result) => {
+                                coll.find({$and:[{phone:data.phone},{order_status:"approve"}]}).toArray((err,result) => {
                                          
                                     if(err){
                                         console.group("Error",err);

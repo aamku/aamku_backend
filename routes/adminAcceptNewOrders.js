@@ -21,12 +21,13 @@ const nexmo = new Nexmo({
           
         product:req.body.product,
         mobile:req.body.phone,
-        date:req.body.date
+        date:req.body.date,
+        cost:req.body.cost
     };
 
     const phone = "91"+data.mobile;
     const from = 'Nexmo';
-    const message = 'Thanks your order has been placed successfully';
+    const message = 'Thanks, your order status has been confirmed.';
 
                   MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
                           
@@ -45,7 +46,8 @@ const nexmo = new Nexmo({
                                                if(doc){
 
                                                 const coll = client.db('Aamku_connect').collection('Orders');
-                                                coll.updateMany({$and:[{retailer_id:data.id},{order_date:data.date}]},{$set:{order_status:"approve"}},(err,result) => {
+                                                coll.updateMany({$and:[{phone:data.mobile},{order_date:data.date},
+                                                {product_name:data.product}]},{$set:{order_status:"approve"}},(err,result) => {
                          
                                                  if(err){
                          
