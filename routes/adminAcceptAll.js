@@ -37,7 +37,7 @@ router.post('/adminGenerateBill',(req,res) => {
              else{
                 
                 let coll = client.db('Aamku_connect').collection('Orders');
-                coll.updateMany({$and:[{phone:data.ret_id},{order_status:data.order_status}]},{$set:{order_status:"packaging"}},(err,result) => {
+                coll.updateMany({$and:[{phone:data.ret_id},{order_status:data.order_status}]},{$set:{order_status:"approve"}},(err,result) => {
 
                   if(err){
 
