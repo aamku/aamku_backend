@@ -50,6 +50,11 @@ app.use(require('./routes/adminAcceptAll.js'));
 app.use(require('./routes/adminCancelOrder.js'));
 app.use(require('./routes/adminOrderSummary.js'));
 
+// web api
+
+app.use(require('./routes/erpApi/addRetailer.js'));
+
+
 app.listen(port,() => {
 
     console.log(`Server is running on ${port}.`);
