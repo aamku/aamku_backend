@@ -60,7 +60,7 @@ router.post('/saveRetailer',(req,res) => {
                                !(req.body.store_name) || !(req.body.mobile) || !(req.body.gst) || !(req.body.state) || 
                                 !(req.body.city) || !(req.body.address) || !(req.body.pin) || !(req.body.status) || !(req.body.date)){
                                
-                                  res.send({"Server response":"Field is empty"});
+                                  return console.log({"Server response":"Field is empty"});
                               }
                               else{
 
