@@ -37,7 +37,7 @@ router.post('/saveRetailer',(req,res) => {
     var payload = {
       notification: {
         title: "New retailer request",
-        body: data.name + "wants to connect"
+        body: data.name + " wants to connect"
       },  
       data: {
         account: "Savings",
@@ -55,6 +55,12 @@ router.post('/saveRetailer',(req,res) => {
 
                               if(err){
                                   console.log("Error",err);
+                              }
+                              if(!(req.body.added_by) || !(req.body.retailer_id) || !(req.body.name) || !(req.body.email) || 
+                               !(req.body.store_name) || !(req.body.mobile) || !(req.body.gst) || !(req.body.state) || 
+                                !(req.body.city) || !(req.body.address) || !(req.body.pin) || !(req.body.status) || !(req.body.date)){
+                               
+                                  res.send({"Server response":"Field is empty"});
                               }
                               else{
 
