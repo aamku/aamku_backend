@@ -37,7 +37,7 @@ router.post('/saveRetailer',(req,res) => {
     var payload = {
       notification: {
         title: "New retailer added",
-        body: "{data.name} added in database."
+        body: data.name + "added in database."
       },  
       data: {
         account: "Savings",
