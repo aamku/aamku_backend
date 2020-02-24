@@ -31,7 +31,7 @@ router.post('/adminSeeNewOrders',(req,res) => {
                     }
                     else{
                         const output = result.map(r => ({'name':r.name,'phone':r.phone,'address':r.address,'product':r.product_name,
-                                         'cost':r.price,'date':r.order_date}));
+                                         'cost':r.price,'date':r.order_date,'status':r.order_status}));
                         res.send(output);   
                     }
                          
