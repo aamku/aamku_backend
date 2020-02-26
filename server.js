@@ -50,6 +50,7 @@ app.use(require('./routes/adminAcceptAll.js'));
 app.use(require('./routes/adminCancelOrder.js'));
 app.use(require('./routes/adminOrderSummary.js'));
 app.use(require('./routes/getStates.js'));
+app.use(require('./routes/getCities.js'));
 
 // web api
 
