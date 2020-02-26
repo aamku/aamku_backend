@@ -49,10 +49,12 @@ app.use(require('./routes/adminSectionBillingDetail.js'));
 app.use(require('./routes/adminAcceptAll.js'));
 app.use(require('./routes/adminCancelOrder.js'));
 app.use(require('./routes/adminOrderSummary.js'));
+app.use(require('./routes/getStates.js'));
 
 // web api
 
 app.use(require('./routes/erpApi/addRetailer.js'));
+app.use(require('./routes/erpApi/smsApiTest.js'));
 
 
 app.listen(port,() => {
