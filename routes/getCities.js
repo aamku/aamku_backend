@@ -23,7 +23,19 @@ router.post('/getCities',(req,res) => {
         else{
             
             const coll = client.db("Aamku_connect").collection("AllRetailers");
-            coll.findOne({state:data.state},function(err,doc){
+            coll.find({state:data.state}).toArray((err,result) => {
+                     
+                if(err){
+                    console.log("Error",err);
+                }
+                else{
+
+                    const output = result.map(r => ({"city":r.city}));
+                    res.send(output);
+                }
+
+            });
+        /*    coll.findOne({state:data.state},function(err,doc){
                        
                 if(err){
                     console.log("Error",err);
@@ -48,7 +60,7 @@ router.post('/getCities',(req,res) => {
                     console.log("no");
                 }
 
-            });
+            });    */
          }
 
     });
