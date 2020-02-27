@@ -20,8 +20,15 @@ router.post('/getFilterRetailer',(req,res) => {
             };
 
                       if(err){
-                          console.log("Error",err);
-                      }
+                          
+                        console.log("Error",err);
+                      
+                    }
+                    
+                /*    if(data.city){
+                        
+                         
+                    }  */
                       else{
                          
                         const coll = client.db("Aamku_connect").collection("AllRetailers");
