@@ -25,7 +25,7 @@ router.post('/getFilterRetailer',(req,res) => {
                       else{
                          
                         const coll = client.db("Aamku_connect").collection("AllRetailers");
-                        coll.find({$or:[{state:data.state},{city:data.city}]}).toArray((err,result) => {
+                        coll.find({$and:[{state:data.state},{city:data.city}]}).toArray((err,result) => {
 
                                     if(err){
                                         console.log("Error",err);
