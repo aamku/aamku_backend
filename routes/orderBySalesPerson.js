@@ -27,6 +27,7 @@ router.post('/orderbySalesPerson',(req,res) => {
             product_name:req.body.product_name,
             price:req.body.price,
             discount:req.body.discount,
+            discount_percent:req.body.discount_percent,
             single_rule_quantity:req.body.single_rule_quantity,
             fourline_quantity:req.body.fourline_quantity,
             square_line_quantity:req.body.square_line_quantity,
