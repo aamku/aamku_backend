@@ -35,7 +35,8 @@ router.post('/retSectionBillingDetail',(req,res) => {
 
                                 let output = result.map(r => ({'pname':r.product_name,'type':r.order_type,'qty':r.quantity,
                                 'sline':r.single_rule_quantity,'sqline':r.square_line_quantity,'fline':r.fourline_quantity,
-                                        'oneside':r.oneside_inter_leaf,'price':r.price}));
+                                        'oneside':r.oneside_inter_leaf,'price':r.price,'total_price':r.total_price,
+                                         'discount_price':r.discount_price,'discount_percent':r.discount_percent}));
  
                                 res.send(output);
                                 client.close();
