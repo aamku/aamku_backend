@@ -53,6 +53,7 @@ app.use(require('./routes/getStates.js'));
 app.use(require('./routes/getCities.js'));
 app.use(require('./routes/getFilterRetailer'));
 app.use(require('./routes/getPin'));
+app.use(require('./routes/salesDeleteItem'));
 
 // web api
 
