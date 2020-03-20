@@ -12,7 +12,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 router.post('/priceAfterDelete',(req,res) => {
 
     const data = {
-        id:req.body.ret_Id,
+        id:req.body.ret_id,
         date:req.body.date,
         order_status:req.body.order_status
    };
@@ -38,9 +38,9 @@ router.post('/priceAfterDelete',(req,res) => {
                             }
                      });
 
-                 }
+                }
 
-   });
+       });
 
 });
 
