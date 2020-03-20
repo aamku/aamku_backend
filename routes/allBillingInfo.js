@@ -41,7 +41,7 @@ router.post('/allBillingInfo',(req,res) => {
                                 res.send(output);
                                 client.close();
                              }
-                    });
+                    }); 
                   }
        });
 });

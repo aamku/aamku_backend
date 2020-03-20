@@ -54,6 +54,7 @@ app.use(require('./routes/getCities.js'));
 app.use(require('./routes/getFilterRetailer'));
 app.use(require('./routes/getPin'));
 app.use(require('./routes/salesDeleteItem'));
+app.use(require('./routes/priceAfterDelete'));
 
 // web api
 
