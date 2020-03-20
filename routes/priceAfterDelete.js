@@ -9,7 +9,7 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.post('/',(req,res) => {
+router.post('/priceAfterDelete',(req,res) => {
 
     const data = {
         id:req.body.ret_Id,
@@ -26,8 +26,7 @@ router.post('/',(req,res) => {
                  else{
 
                     const coll = client.db("Aamku_connect").collection("Orders");
-                    coll.find({$and:[{retailer_id:data.id},{order_date:data.date},{order_status:data.order_status}]})
-                     .toArray((err,result) => {
+                    coll.find({$and:[{retailer_id:data.id},{order_date:data.date},{order_status:data.order_status}]}).toArray((err,result) => {
                              
                             if(err){
                                 console.log("Error",err);
